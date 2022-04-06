@@ -6,15 +6,18 @@ inputs:
   username:
     required: true
     type: string
-secrets:
   muleMavenEEUser:
     required: true
+    type: string
   muleMavenEEPwd:
     required: true
+    type: string
   ghUser:
     required: true
+    type: string
   ghPwd:
     required: true
+    type: string
 
 runs:
   using: "composite"
@@ -65,12 +68,12 @@ runs:
           [
             { 
               "id": "MuleRepository", 
-              "username": "${{ secrets.muleMavenEEUser }}", 
-              "password": "${{ secrets.muleMavenEEPwd }}" 
+              "username": "${{ inputs.muleMavenEEUser }}", 
+              "password": "${{ inputs.muleMavenEEPwd }}" 
             },
             { 
               "id": "github", 
-              "username": "${{ secrets.ghUser }}", 
-              "password": "${{ secrets.ghPwd }}" 
+              "username": "${{ inputs.ghUser }}", 
+              "password": "${{ inputs.ghPwd }}" 
             }
           ]
