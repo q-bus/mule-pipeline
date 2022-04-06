@@ -3,21 +3,16 @@ name: Setup JDK Maven and Git
 description: setting up the required tools
 
 inputs:
-  username:
-    required: true
-    type: string
   muleMavenEEUser:
     required: true
     type: string
   muleMavenEEPwd:
     required: true
-    type: string
   ghUser:
     required: true
     type: string
   ghPwd:
     required: true
-    type: string
 
 runs:
   using: "composite"
